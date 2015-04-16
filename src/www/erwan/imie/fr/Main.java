@@ -1,5 +1,10 @@
 package www.erwan.imie.fr;
 
+/**
+ * @autor Erwan
+ */
+
+
 import java.lang.reflect.Array;
 import java.util.Arrays;
 
@@ -7,6 +12,10 @@ public class Main {
 
 
     public static void main(String[] args) {
+/**
+ *
+ */
+
 /*Exercice 1*/
         /*
     int age = 18;
