@@ -1,5 +1,8 @@
 package www.erwan.imie.fr;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class Main {
 
 
@@ -311,7 +314,7 @@ public class Main {
  */
         /*Exercice 20*/
         //Faire deux euros avec des pièces
-
+/*
         int p1 = 2;
         int p2 = 5;
         int p3 = 10;
@@ -339,7 +342,7 @@ public class Main {
             }
         }
         System.out.println(nb);
-
+*/
         /*Exercice 21*/
     /*
         boolean premier = true;
@@ -361,22 +364,31 @@ public class Main {
         System.out.println(nbRandom);
     */
         /*Exercice 23*/
-    /*
+/*
         int[] tab = {1,2,3,4,3};
         boolean consecutif = true;
         for (int ii = 0; ii < tab.length -1; ii++){
             if ((tab[ii] != tab[ii+1] + 1) && (tab[ii] != tab[ii+1] - 1)){
                 consecutif = false;
+                break;
             }
         }
         System.out.println(consecutif);
-   */
 
+*/
         /*Exercice 24*/
-    /*
-        int[] tab = {3,4,2,9,7,3,1,10};
+
+/*
+        int[] tab=new int[99999999];
+// affectation de valeurs au tableau en random
+        for (int iij=0;iij<99999999;iij++){
+            tab[iij]=(int) Math.random()*100;
+        }
         int nb;
         boolean modif;
+// mise en place d'un calcul de temps du trie à bulle
+        long debut = System.currentTimeMillis();
+//tri à bulle
         for(int jj = tab.length - 1; jj >= 1; jj--){
             modif = false;
             for (int ii = 0; ii < jj; ii++){
@@ -394,11 +406,27 @@ public class Main {
         }
 // Affichage du tableau trié
         for (int n : tab){
-            System.out.print(n + " ");
+       //     System.out.print(n + " ");
         }
-    */
+// resultat du temps d'execution
+        System.out.println("");
+        System.out.println(System.currentTimeMillis()- debut);
+
+
+
+//trie avec la methode aaray.sort de Java
+        int[] tab2 = tab;
+        long debut2 = System.currentTimeMillis();
+        Arrays.sort(tab2);
+        for (int n : tab2){
+      //      System.out.print(n + " ");
+        }
+        System.out.println("");
+        System.out.println(System.currentTimeMillis()- debut2);
+
+ */
         /*Exercice 25*/
-/*
+
         int[][] plateau = new int[10][10];
         int nbDep= 0, xD, yD, xO, yO, cptObs = 0;
         boolean place = false;
@@ -449,7 +477,7 @@ public class Main {
         }
         System.out.println("La dame peut faire " + nbDep +  " déplacements.");
 
-*/
+
         /************************************************************************
          * **************************  Fin  *************************************
          * **********************************************************************/
