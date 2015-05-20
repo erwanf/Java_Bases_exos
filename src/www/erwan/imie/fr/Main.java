@@ -5,8 +5,10 @@ package www.erwan.imie.fr;
  */
 
 
+import java.util.Scanner;
 import java.lang.reflect.Array;
-import java.util.Arrays;
+import java.math.BigDecimal;
+import java.util.*;
 
 public class Main {
 
@@ -18,7 +20,9 @@ public class Main {
 
 /*Exercice 1*/
         /*
-    int age = 18;
+        Scanner scan = new Scanner(System.in);
+        int age;
+        age = scan.nextInt();
 
         if (age>=12){
             System.out.println("Cadet");
@@ -35,8 +39,8 @@ public class Main {
             System.out.println("Trop jeune");
         }
 
-
 */
+
 
    /*Exercice 2*/
 /*
@@ -61,10 +65,10 @@ public class Main {
 */
         /*Exercice 4*/
 /*
-        int nbPhotocop = 15;
+        int nbPhotocop = 14;
         double prix=0;
-        int ii = 0;
-        while (ii<nbPhotocop) {
+        int ii = 1;
+        while (ii<=nbPhotocop) {
             if (ii <= 10) {
                 prix +=  0.1;
             } else if (ii <= 30) {
@@ -97,11 +101,11 @@ public class Main {
         /*Exercice 7*/
 /*
         for(int ii = 0; ii <=100; ii++){
-            System.out.print(ii + " ");
+            System.out.println(ii + " ");
         }
         System.out.println();
         int ii = 0;
-        while (ii != 101){
+        while (ii <= 100){
             System.out.print(ii + " ");
             ii++;
         }
@@ -353,7 +357,7 @@ public class Main {
         System.out.println(nb);
 */
         /*Exercice 21*/
-    /*
+/*
         boolean premier = true;
         for (int ii = 2; ii <= 100; ii++){
             for(int jj = 2; jj <= ii-1; jj++){
@@ -364,9 +368,10 @@ public class Main {
             }
             if (premier){
                 System.out.println(ii + " est un nombre premier.");
-            }premier = true;
+            }
+            premier = true;
         }
-    */
+*/
         /*Exercice 22*/
     /*
         int nbRandom = (int)(Math.random()*15 + 5);
@@ -434,10 +439,12 @@ public class Main {
         System.out.println(System.currentTimeMillis()- debut2);
 
  */
+
+
         /*Exercice 25*/
 
         int[][] plateau = new int[10][10];
-        int nbDep= 0, xD, yD, xO, yO, cptObs = 0;
+        int nbDep=0, xD, yD, xO, yO, cptObs = 0;
         boolean place = false;
 // Creation du plateau
         for (int ii = 0; ii <= 9; ii++){
@@ -454,7 +461,7 @@ public class Main {
         while (cptObs < 8){
             xO = (int)(Math.random()*7) + 1;
             yO = (int)(Math.random()*7) + 1;
-// Si on est pas déjà sur un obstacle, on en place un
+            // Si on est pas déjà sur un obstacle, on en place un
             if (plateau[xO][yO] != 0){
                 plateau[xO][yO] = 0;
                 cptObs++;
@@ -464,20 +471,20 @@ public class Main {
         do{
             xD = (int)(Math.random()*7) + 1;
             yD = (int)(Math.random()*7) + 1;
-// Si on est pas sur un obstacle, on place la reine
+            // Si on est pas sur un obstacle, on place la reine
             if (plateau[xD][yD] != 0){
                 place = true;
                 plateau[xD][yD] = 4;
             }
         }while(!place);
-// Afficher mon plateau :
+        // Afficher mon plateau :
         for(int ii = 0; ii <= 9; ii++) {
             for (int jj = 0; jj <= 9; jj++){
                 System.out.print(plateau[ii][jj] + " ");
             }
             System.out.println();
         }
-// Calculer les déplacements de la reine grâce à la méthode récursive dep
+        // Calculer les déplacements de la reine grâce à la méthode récursive dep
         for (int uu = -1; uu <= 1; uu++){
             for(int vv = -1; vv <=1; vv++){
                 if (uu != 0 || vv != 0){nbDep = nbDep + Dame.dep(uu, vv, xD+uu, yD+vv, plateau);

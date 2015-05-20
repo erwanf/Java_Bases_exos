@@ -5,6 +5,15 @@ package www.erwan.imie.fr;
  * cours CDPN 06
  */
 public class Dame {
+    /**
+     *
+     * @param x
+     * @param y
+     * @param xD
+     * @param yD
+     * @param tab
+     * @return
+     */
     public static int dep(int x, int y, int xD, int yD, int[][] tab){
         if (tab[xD][yD] == 0){
             return 0;
@@ -13,5 +22,5 @@ public class Dame {
             return 1 + dep(x, y, xD+x, yD+y, tab);
         }
     }
-
+ 
 }
